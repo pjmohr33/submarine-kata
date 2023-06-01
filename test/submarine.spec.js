@@ -1,7 +1,7 @@
 const { Submarine } = require('../src/submarine');
 
 describe('Submarine', function () {
-
+  // Set values for beforeEach
   let submarine;
 
   beforeEach(() => {
@@ -21,19 +21,7 @@ describe('Submarine', function () {
 
     describe("Depth Operations", function () {
 
-      let submarine;
-
-      beforeEach(() => {
-        submarine = new Submarine;
-      });
-
-      afterEach(() => {
-        // wipes each instance of submarine before trying again
-        submarine = '';
-      });
-
       it('has a depth of 0 and a horizontalPosition of 0', () => {
-
         expect(submarine.depth).toEqual(0);
 
         expect(submarine.horizontalPosition).toEqual(0);
@@ -72,6 +60,7 @@ describe('Submarine', function () {
       });
 
       it('cannot have a negative depth (be above the surface of the water)', () => {
+        // Submarine starts at depth of 0
         submarine.up(100)
 
         expect(submarine.depth).toEqual(0);
