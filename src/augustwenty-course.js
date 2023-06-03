@@ -1,5 +1,4 @@
 const augustwentyCourse = `
-
 forward 9
 forward 7
 forward 4

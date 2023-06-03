@@ -20,11 +20,11 @@ class NavigationControls {
       // Remove extra spaces and trim string
       str = str.replace(/\s+/g, " ").trim();
       // Split the string into an array using space as the delimiter
-      var plan = str.split(" ");
+      let plan = str.split(" ");
 
       // Process each value in the array
-      for (var i = 0; i < plan.length; i++) {
-        var value = plan[i];
+      for (let i = 0; i < plan.length; i++) {
+        const value = plan[i];
 
         // Check if the value is a number
         if (!isNaN(value)) {
@@ -42,7 +42,7 @@ class NavigationControls {
       });
 
       // Make the first value a command
-      function firstIsCommand(plan) {
+      function aCommandIsFirst(plan) {
         // Check if first value is not not (is) a number
         if (!isNaN(plan[0])) {
 
@@ -50,14 +50,14 @@ class NavigationControls {
           plan.shift();
 
           // Check recursively until first value isn't a number
-          return firstIsCommand(plan);
+          return aCommandIsFirst(plan);
         }
 
         //return the plan to previous function
         return plan;
       }
 
-      plan = firstIsCommand(plan);
+      plan = aCommandIsFirst(plan);
 
       // Return the resulting array
       return plan;

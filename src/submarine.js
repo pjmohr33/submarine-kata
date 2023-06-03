@@ -1,7 +1,8 @@
 const { NavigationControls } = require('./navigation-controls');
 
 class Submarine {
-  constructor() {
+  constructor(name) {
+    this.name = name;
     // Submarine is at surface and marks starting location
     this.depth = 0;
     this.horizontalPosition = 0;
@@ -34,6 +35,17 @@ class Submarine {
   // Calculates product of depth and horizontal position
   getPositionProduct() {
     return this.depth * this.horizontalPosition;
+  };
+
+  // Moves Submarine given direction num nautical meters
+  move(cmd, num) {
+    if (cmd === 'forward') {
+      this.forward(num);
+    } else if (cmd === 'down') {
+      this.down(num);
+    } else if (cmd === 'up') {
+      this.up(num);
+    };
   };
 };
 
