@@ -1,6 +1,7 @@
 const { Submarine } = require('../src/submarine');
 
 describe('Submarine', function () {
+  
   // Set values for beforeEach
   let submarine;
 

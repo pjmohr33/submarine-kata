@@ -35,7 +35,7 @@ describe('Navigation Controls', () => {
   describe('Direction Operations', () => {
 
     it('Can interpet direction orders', () => {
-      expect(NavigationControls.interpetPlan(plan)).toEqual(res);
+      expect(controls.interpetPlan(plan)).toEqual(res);
     });
 
     it('Can execute direction orders', () => {

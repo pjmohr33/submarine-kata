@@ -137,6 +137,7 @@ describe('Ready Captain', () => {
 
         expect(console.clear).toHaveBeenCalled();
         expect(console.log).toHaveBeenCalledWith(expect.stringContaining("You're already at the surface!\n"));
+        // Code prevents ship from actually moving but will still call the function
         expect(captain.submarine.move).toHaveBeenCalledWith('up', 10);
       });
 
@@ -188,6 +189,7 @@ describe('Ready Captain', () => {
 
         expect(console.clear).toHaveBeenCalled();
         expect(console.log).toHaveBeenCalledWith(expect.stringContaining("Your Navigation Plans:"));
+
       });
 
       it("should handle 'run' command with a valid navigation plan", async () => {
