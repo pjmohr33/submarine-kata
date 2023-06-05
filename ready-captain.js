@@ -169,6 +169,10 @@ class ReadyCaptain {
 
             // Breaking the Surface
           } else if (this.submarine.depth - num <= 0) {
+            if (this.submarine.depth - num < 0) {
+              num = this.submarine.depth;
+              console.log(`Can't move further than ${num}!`);
+            }
             console.log(`Moving ${boatName} ${command} ${num} nautical meters!\n`);
             console.log(`You've broken to the surface, Captain ${name}!\n`);
 
